@@ -18,8 +18,8 @@ const station = {
 
 const navItems = [
   { label: "Dashboard", id: "dashboard" },
-  { label: "Historial", id: "historial" },
   { label: "Gráficas", id: "graficas" },
+  { label: "Historial", id: "historial" },
   { label: "Gestión de estaciones", id: "gestion" },
 ];
 

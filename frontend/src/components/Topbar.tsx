@@ -17,10 +17,10 @@ export function Topbar({ onMenuOpen }: TopbarProps) {
           <span />
         </button>
 
-        <div>
+        {/* <div>
           <p className="eyebrow">Weather station</p>
           <h1>Station Monitor</h1>
-        </div>
+        </div> */}
       </div>
 
       <div className="topbar-actions" aria-label="Acciones">

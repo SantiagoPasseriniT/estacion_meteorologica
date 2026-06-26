@@ -22,6 +22,21 @@ button {
   font: inherit;
 }
 
+h2{
+  font-size: 30px;
+}
+
+.section-title-wrap{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.section-subtitle{
+  font-size: 16px;
+  color: #c6c6cd;
+}
+
 /* ─── Layout ─────────────────────────────────────────── */
 
 .app-shell {
@@ -444,6 +459,8 @@ h2 {
   margin-top: 18px;
 }
 
+
+
 .chart-card {
   display: flex;
   flex-direction: column;
@@ -796,6 +813,12 @@ h2 {
   margin-bottom: 16px;
 }
 
+.log-panel-title-wrap{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .log-panel-title {
   display: flex;
   align-items: center;
@@ -813,8 +836,8 @@ h2 {
 }
 
 .log-live-dot {
-  width: 9px;
-  height: 9px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #7ed69a;
   box-shadow: 0 0 0 4px rgba(126, 214, 154, 0.12);
@@ -1333,7 +1356,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding-top: 24px;
+  padding-top: 18px;
 }
 
 .smp-header {

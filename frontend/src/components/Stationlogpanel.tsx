@@ -109,14 +109,14 @@ export function StationLogPanel() {
   return (
     <section className="log-panel" aria-label="Log de estaciones en vivo">
       <div className="log-panel-head">
-        <div>
+        <div className="section-title-wrap">
           <div className="log-panel-title">
             <span className={`log-live-dot${paused ? " paused" : ""}`} aria-hidden="true" />
-            <h2 className="log-heading">Log de estaciones</h2>
+            <h2>Log de estaciones</h2>
           </div>
-          <p className="log-panel-subtitle">
+          <span className="section-subtitle">
             Transmisión en vivo de telemetría de todas las estaciones activas.
-          </p>
+          </span>
         </div>
         <button
           className="log-pause-btn"

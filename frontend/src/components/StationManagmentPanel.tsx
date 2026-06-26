@@ -279,10 +279,10 @@ export function StationManagementPanel() {
 
   return (
     <section className="smp-panel" aria-label="Gestión de estaciones">
-      <div className="smp-header">
-        <div>
-          <p className="eyebrow">Red de monitoreo</p>
+      <div>
+        <div className="section-title-wrap" style={{ marginBottom: "12px" }}>
           <h2>Gestión de estaciones</h2>
+          <span className="section-subtitle">Administra y monitorea todas las estaciones meteorológicas.</span>
         </div>
         <div className="smp-summary">
           <span className="smp-summary-item smp-summary-online">
