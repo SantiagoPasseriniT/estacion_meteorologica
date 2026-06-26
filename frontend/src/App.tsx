@@ -6,6 +6,7 @@ import { MetricCard } from "./components/MetricCard";
 import { PlaceholderPanel } from "./components/Placeholderpanel";
 import { GraficasPanel } from "./components/Graficaspanel";
 import { StationLogPanel } from "./components/Stationlogpanel";
+import { StationManagementPanel } from "./components/StationManagmentPanel";
 
 const station = {
   name: "Station Alpha",
@@ -52,7 +53,7 @@ function App() {
       case "graficas":
         return <GraficasPanel />;
       case "gestion":
-        return <PlaceholderPanel title="Gestión de estaciones" />;
+        return <StationManagementPanel />;
       default:
         return null;
     }

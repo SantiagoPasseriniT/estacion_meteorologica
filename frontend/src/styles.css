@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap");
-/*dsadsad*/
+
 :root {
   color: #e4e2e4;
   background: #131315;
@@ -1115,9 +1115,9 @@ h2 {
   }
 }
 
-/* ─── Mobile (≤ 640px) ────────────────────────────────── */
+/* ─── Mobile (≤ 800px) ────────────────────────────────── */
 
-@media (max-width: 640px) {
+@media (max-width: 800px) {
   .app-shell {
     grid-template-columns: 1fr;
   }
@@ -1324,6 +1324,307 @@ h2 {
 
   .log-pagination {
     flex-wrap: wrap;
+  }
+}
+
+/* ─── Station Management Panel ───────────────────────── */
+
+.smp-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 24px;
+}
+
+.smp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.smp-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.smp-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid #45464d;
+  border-radius: 20px;
+  background: #1b1b1d;
+  font-size: 12px;
+  font-weight: 500;
+  color: #c6c6cd;
+}
+
+.smp-summary-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.smp-summary-online .smp-summary-dot  { background: #7ed69a; }
+.smp-summary-degraded .smp-summary-dot { background: #d9a56c; }
+.smp-summary-offline .smp-summary-dot  { background: #6b6c72; }
+
+/* ── Grid ── */
+
+.smp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ── Card ── */
+
+.smp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 20px;
+  border: 1px solid #45464d;
+  border-radius: 10px;
+  background: #1b1b1d;
+  transition: border-color 0.15s;
+  min-width: 0;
+}
+
+.smp-card--online   { border-left: 3px solid #7ed69a; }
+.smp-card--degraded { border-left: 3px solid #d9a56c; }
+.smp-card--offline  { border-left: 3px solid #45464d; }
+
+.smp-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+}
+
+.smp-card-name-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.smp-card-name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e4e2e4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.smp-card-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  font-size: 12px;
+  color: #6b6c72;
+}
+
+.smp-location-icon {
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+  border: 1.5px solid currentColor;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.smp-location-icon::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Status badge ── */
+
+.smp-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.smp-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.smp-status-online {
+  background: rgba(126, 214, 154, 0.12);
+  color: #7ed69a;
+  border: 1px solid rgba(126, 214, 154, 0.25);
+}
+.smp-status-online .smp-status-dot {
+  background: #7ed69a;
+  box-shadow: 0 0 0 3px rgba(126, 214, 154, 0.2);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.smp-status-degraded {
+  background: rgba(217, 165, 108, 0.12);
+  color: #d9a56c;
+  border: 1px solid rgba(217, 165, 108, 0.25);
+}
+.smp-status-degraded .smp-status-dot { background: #d9a56c; }
+
+.smp-status-offline {
+  background: rgba(107, 108, 114, 0.12);
+  color: #6b6c72;
+  border: 1px solid rgba(107, 108, 114, 0.25);
+}
+.smp-status-offline .smp-status-dot { background: #45464d; }
+
+/* ── Divider ── */
+
+.smp-divider {
+  height: 1px;
+  background: #45464d;
+  margin: 16px 0;
+}
+
+/* ── Card body rows ── */
+
+.smp-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.smp-metric-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.smp-metric-label {
+  font-size: 12px;
+  color: #6b6c72;
+  white-space: nowrap;
+}
+
+.smp-metric-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: #c6c6cd;
+}
+
+.smp-lastcomm {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #bec6e0;
+}
+
+/* ── Battery bar ── */
+
+.smp-battery-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.smp-battery-track {
+  width: 72px;
+  height: 6px;
+  border-radius: 3px;
+  background: #2e2f33;
+  overflow: hidden;
+}
+
+.smp-battery-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.smp-battery-high { background: #7ed69a; }
+.smp-battery-mid  { background: #d9a56c; }
+.smp-battery-low  { background: #d96c6c; }
+
+.smp-battery-label {
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  color: #c6c6cd;
+  min-width: 34px;
+  text-align: right;
+}
+
+/* ── Connection bars ── */
+
+.smp-connection {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.smp-conn-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.smp-conn-bar {
+  width: 4px;
+  border-radius: 2px;
+  background: #2e2f33;
+}
+
+.smp-conn-buena   .smp-conn-bar--active { background: #7ed69a; }
+.smp-conn-regular .smp-conn-bar--active { background: #d9a56c; }
+.smp-conn-perdida .smp-conn-bar--active { background: #d96c6c; }
+
+.smp-conn-label {
+  font-size: 12px;
+  color: #c6c6cd;
+}
+
+.smp-conn-buena   .smp-conn-label { color: #7ed69a; }
+.smp-conn-regular .smp-conn-label { color: #d9a56c; }
+.smp-conn-perdida .smp-conn-label { color: #d96c6c; }
+
+/* ── Responsive ── */
+
+@media (max-width: 1200px) {
+  .smp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .smp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .smp-header {
+    flex-direction: column;
+    gap: 12px;
   }
 }
 
